@@ -1,6 +1,6 @@
 <?php
 include "../../modal/conexao.php";
-$sql = "SELECT * FROM table1";
+$sql = "SELECT * FROM projecto";
 $resultado = mysqli_query($link,$sql); 
  ?>
 
@@ -164,11 +164,11 @@ $resultado = mysqli_query($link,$sql);
               <tbody>
                  <?php while($dados = mysqli_fetch_array($resultado)){ ?>
                   <tr>
-                    <td><?php echo $dados['name']; ?></td>
-                    <td><?php echo $dados['description']; ?></td>
+                    <td><?php echo $dados['nome']; ?></td>
+                    <td><?php echo $dados['descricao']; ?></td>
                     <td>PDF</td>
-                    <td><a class="delete_btn" name="del" href="server.php?del=<?php echo $row['id'];?>">Delete</a></td>
-                    <td><a class="edit_btn"  href="index.php?edit=<?php echo $row ['id'];?>">Edit</a></td>
+                    <td><a class="delete_btn" name="del" href="server.php?del=<?php echo $dados['id'];?>">Delete</a></td>
+                    <td><a class="edit_btn"  href="index.php?edit=<?php echo $dados ['id'];?>">Edit</a></td>
                     
                   </tr>
            <?php } ?>

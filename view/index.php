@@ -1,7 +1,7 @@
 
 <?php 
 include "../modal/conexao.php";
-$sql = "SELECT * FROM table1";
+$sql = "SELECT * FROM projecto";
 $resultado = mysqli_query($link,$sql); 
 
 ?>
@@ -121,10 +121,10 @@ $resultado = mysqli_query($link,$sql);
           <?php while($dados = mysqli_fetch_array($resultado)){ ?>
             <div class="col-sm-4">
               <div class="card text-white bg-dark mb-3 hvr-grow" style="width: 29rem;" >
-               <div class="card-header"><?php echo $dados['name']; ?></div>
+               <div class="card-header"><?php echo $dados['nome']; ?></div>
                 <a href="../view/project.php?id=<?php echo $dados['id']; ?>"> 
                   <div class="card-body">
-                    <p class="card-text"><?php echo $dados['description']; ?></p>
+                    <p class="card-text"><?php echo $dados['descricao']; ?></p>
                   </div>
                 </a>
               </div>

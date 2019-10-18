@@ -96,7 +96,7 @@
           <span>Ver Projectos</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="registarprojecto.php">
+        <a class="nav-link" href="registrar.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Registrar Projectos</span></a>
       </li>
@@ -119,9 +119,30 @@
           <li class="breadcrumb-item active">Overview</li>
         </ol>
 
-        <h1>Bem Vindo a pagina do Admin</h1>
+        <h3>Registar Projecto</h3>
+<!--============================Formulario de cadastro de colaborador========================-->
+          <form>
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Nome</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputPassword1">Objectivos</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputPassword1">Descricao</label>
+                  <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder=""></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputPassword1">Mais detalhes</label>
+                  <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder=""></textarea>
+              </div>
 
-
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+  <!--=============================================fim de formulario==========================================-->
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
         <div class="container my-auto">

@@ -3,7 +3,7 @@
 <?php 
 include "../modal/conexao.php";
 $id= $_GET['id'];
-$sql = "SELECT * FROM table1 WHERE id='$id'";
+$sql = "SELECT * FROM projecto WHERE id='$id'";
 $resultado = mysqli_query($link,$sql); 
 
 ?>
@@ -134,7 +134,7 @@ $resultado = mysqli_query($link,$sql);
           <div class="section-header">
 
           <?php while($com = mysqli_fetch_array($resultado)){ ?>
-            <h2 class="projectname"><?php echo $com['name']; ?></h2>
+            <h2 class="projectname"><?php echo $com['nome']; ?></h2>
           
         </div>
 
@@ -145,7 +145,7 @@ $resultado = mysqli_query($link,$sql);
   <div class="card-header">Descricao</div>
  <div class="card-body">
 
-    <p class="card-text"> <?php echo $com['description']; ?>
+    <p class="card-text"> <?php echo $com['descricao']; ?>
     </p>
   </div>
   <?php } ?>

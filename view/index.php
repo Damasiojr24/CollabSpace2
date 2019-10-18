@@ -132,53 +132,7 @@ $resultado = mysqli_query($link,$sql);
           <?php } ?>
 
            
-            <div class="col-sm-4">
-                        <div class="card text-white bg-dark mb-3 hvr-grow" style="max-width: 29rem;">
-  <div class="card-header">Social Network</div>
-  <a href="../view/project.php">  <div class="card-body">
 
-    <p class="card-text">Quick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's content.</p>
-  </div>
-</a>
-</div>
-            </div>
-            <div class="col-sm-4">
-                        <div class="card text-white bg-dark mb-3 hvr-grow" style="max-width: 29rem;">
-  <div class="card-header">CSP Corporation</div>
-  <a href="../view/project.php">  <div class="card-body">
-
-    <p class="card-text">Quick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's content.</p>
-  </div></a>
-</div>
-            </div>
-
-            <div class="col-sm-4">
-                         <div class="card text-white bg-dark mb-3 hvr-grow" style="width: 29rem;">
-  <div class="card-header">Text Objects</div>
-   <a href="../view/project.php"> <div class="card-body">
-
-    <p class="card-text">Quick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's content.</p>
-  </div></a>
-</div>
-</div>
-           
-            <div class="col-sm-4">
-                        <a href="#"><div class="card text-white bg-dark mb-3 hvr-grow" style="max-width: 29rem;"></a>
-  <div class="card-header">Energia Barata</div>
-   <a href="../view/project.php"> <div class="card-body">
-
-    <p class="card-text">Quick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's content.</p>
-  </div></a>
-</div>
-            </div>
-            <div class="col-sm-4">
-                        <div class="card text-white bg-dark mb-3 hvr-grow" style="max-width: 29rem;">
-  <div class="card-header">Web Admin</div>
-   <a href="../view/project.php"> <div class="card-body">
-
-    <p class="card-text">Quick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's contentQuick sample text to create the card title and make up the body of the card's content.</p>
-  </div></a>
-</div>
             </div>
 
 

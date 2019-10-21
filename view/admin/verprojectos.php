@@ -138,17 +138,17 @@ $resultado = mysqli_query($link,$sql);
            <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Data Table Example</div>
+           Tabela de dados dos projectos</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr class="trc">
                     <th class="th1">Nome do Projecto</th>
-                    <th>Descricao</th>
-                    <th>Documentos</th>
-                    <th>Edit</th>
-                     <th>Delete</th>
+                    <th>Objectivos do projecto</th>
+                    <th>Detalhes</th>
+                    <th>Actualizar</th>
+                     <th>Remover</th>
 
                   </tr>
                 </thead>
@@ -165,11 +165,12 @@ $resultado = mysqli_query($link,$sql);
                  <?php while($dados = mysqli_fetch_array($resultado)){ ?>
                   <tr>
                     <td><?php echo $dados['nome']; ?></td>
-                    <td><?php echo $dados['descricao']; ?></td>
-                    <td>PDF</td>
-                    <td><a class="delete_btn" name="del" href="server.php?del=<?php echo $dados['id'];?>">Delete</a></td>
-                    <td><a class="edit_btn"  href="index.php?edit=<?php echo $dados ['id'];?>">Edit</a></td>
-                    
+                    <td><?php echo $dados['objectivo']; ?></td>
+                      <td><button type="submit" class="btn badge-primary" onclick="buscarParaDetalhes(<?php echo $dados['id'];?>)">Detalhes</button></td>
+                      <td><button type="submit" class="btn badge-success"  onclick="buscarParaEditar(<?php echo $dados['id'];?>)">Actualizar</button></td>
+                      <td><button class="btn btn-danger"  onclick="buscarParaRemover(<?php echo $dados['id'];?>)">Remover</button></td>
+
+
                   </tr>
            <?php } ?>
                 </tbody>
@@ -221,6 +222,103 @@ $resultado = mysqli_query($link,$sql);
     </div>
   </div>
 
+
+
+
+  <!--===============================Modal para editar os dados============================-->
+
+  <div class="modal fade" id="modaleditar" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Actualizar dados do projecto</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Nome </label>
+                          <input type="text"  class="form-control" id="nome" name="atnome">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Objectivo</label>
+                          <input type="text" class="form-control" id="objectivo" name="atobjectivo">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="message-text" class="col-form-label">Descricao</label>
+                          <textarea class="form-control" id="descricao" name="atobjectivo"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="message-text" class="col-form-label">Detalhes</label>
+                          <textarea class="form-control" id="detalhes" name="atdetalhes"></textarea>
+                      </div>
+                      <input type="number" class="form-control" id="idp" name="atid" hidden>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-primary" onclick="actualizar()">Salvar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+  <!--============================================================================================-->
+
+
+
+  <!--=================================== Detalhes====================================================-->
+  <div class="modal fade" id="modaldetalhes" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Mais detalhes</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p id="detalhesdetalhes"></p>
+                  <p id="descricaodetalhes"></p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--==========================================================================================================-->
+
+
+  <!--===================================== modal para remover=========================================================-->
+  <div class="modal fade" id="modalremover" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <h6>Tens certeza que pretendes remover o projecto</h6>
+                  <h3 id="nomeremover"></h3>
+              </div>
+              <input type="number" id="idremover" name="idremoverp" hidden>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Nao</button>
+                  <button type="button" class="btn btn-primary" onclick="remover()">Sim</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--======================================================================================================-->
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -239,6 +337,182 @@ $resultado = mysqli_query($link,$sql);
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
+
+
+  <script>
+      function buscarParaEditar(data){
+          $.ajax({
+              type:'post',
+              url: '../../Controller/projectoController.php',
+              dataType: 'JSON',
+              data:{
+                  '_token':$('input[name=_token]').val(),
+                  'id':data,
+                  'buscarparaeditar' :1
+              },
+              success:function(data){
+                  document.getElementById("idp").value=data[0].id;
+                  document.getElementById("nome").value=data[0].nome;
+                  document.getElementById("objectivo").value=data[0].objectivo;
+                  document.getElementById("detalhes").value=data[0].detalhes;
+                  document.getElementById("descricao").value=data[0].descricao;
+                  $('#modaleditar').modal('show');
+                  console.log(data);
+
+                  console.log(data[0].nome);
+
+
+              },
+              error:function () {
+                  alert("Erro ao tentar registar, tente novamente");
+
+              }
+          });
+
+      }
+
+
+
+      function buscarParaDetalhes(data) {
+          $.ajax({
+              type:'post',
+              url: '../../Controller/projectoController.php',
+              dataType: 'JSON',
+              data:{
+                  '_token':$('input[name=_token]').val(),
+                  'id':data,
+                  'buscarparardetalhes' :1
+              },
+              success:function(data){
+                  document.getElementById("detalhesdetalhes").innerHTML=data[0].detalhes;
+                  document.getElementById("descricaodetalhes").innerHTML=data[0].descricao;
+                  $('#modaldetalhes').modal('show');
+                  console.log(data);
+
+                  console.log(data[0].nome);
+
+
+              },
+              error:function () {
+                  alert("Erro ao tentar registar, tente novamente");
+
+              }
+          });
+
+      }
+
+
+
+
+
+      function buscarParaRemover(data) {
+          $.ajax({
+              type:'post',
+              url: '../../Controller/projectoController.php',
+              dataType: 'JSON',
+              data:{
+                  '_token':$('input[name=_token]').val(),
+                  'id':data,
+                  'buscarpararemover' :1
+              },
+              success:function(data){
+                  document.getElementById("nomeremover").innerHTML=data[0].nome+"?";
+                  document.getElementById("idremover").value=data[0].id;
+                  $('#modalremover').modal('show');
+                  console.log(data);
+
+                  console.log(data[0].nome);
+
+
+              },
+              error:function () {
+                  alert("Erro ao tentar registar, tente novamente");
+
+              }
+          });
+
+      }
+
+
+
+
+
+
+
+
+
+
+      function remover(){
+
+
+//Metodo para inserir fornecedor via ajax
+          $.ajax({
+              type:'post',
+              url: '../../Controller/projectoController.php',
+              dataType:'html',
+              data:{
+                  '_token':$('input[name=_token]').val(),
+                  'idremoverp':$('input[name=idremoverp]').val(),
+                  'remover':1
+
+              },
+              success:function(data){
+                  alert('Removido com sucesso!');
+                  window.location.reload();
+
+              },
+              error:function (data) {
+                  console.log(data);
+                  alert("Erro ao tentar registar projecto, tente novamente");
+
+              }
+          });
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function actualizar(){
+
+
+//Metodo para inserir fornecedor via ajax
+          $.ajax({
+              type:'post',
+              url: '../../Controller/projectoController.php',
+              dataType:'html',
+              data:{
+                  '_token':$('input[name=_token]').val(),
+                  'nome':$('input[name=atnome]').val(),
+                  'id':$('input[name=atid]').val(),
+                  'objectivo':$('input[name=atobjectivo]').val(),
+                  'descricao':$('textarea[name=atdescricao]').val(),
+                  'detalhes':$('textarea[name=atdetalhes]').val(),
+                  'actualizar':1
+
+              },
+              success:function(data){
+                  alert("Actualizado");
+                  window.location.reload();
+
+              },
+              error:function (data) {
+                  console.log(data);
+                  alert("Erro ao tentar registar projecto, tente novamente");
+
+              }
+          });
+      }
+
+  </script>
 
 </body>
 

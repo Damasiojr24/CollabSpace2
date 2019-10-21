@@ -121,27 +121,26 @@
 
         <h3>Registar Projecto</h3>
 <!--============================Formulario de cadastro de colaborador========================-->
-          <form>
+
               <div class="form-group">
                   <label for="exampleInputEmail1">Nome</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  <input type="text" name="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
               </div>
               <div class="form-group">
                   <label for="exampleInputPassword1">Objectivos</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="text" name="objectivo" class="form-control" id="exampleInputPassword1" placeholder="Password">
               </div>
               <div class="form-group">
                   <label for="exampleInputPassword1">Descricao</label>
-                  <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder=""></textarea>
+                  <textarea type="text" name="descricao" class="form-control" id="exampleInputPassword1" placeholder=""></textarea>
               </div>
               <div class="form-group">
                   <label for="exampleInputPassword1">Mais detalhes</label>
-                  <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder=""></textarea>
+                  <textarea type="text" name="detalhes" class="form-control" id="exampleInputPassword1" placeholder=""></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+              <button type="submit" onclick="salvar()"  class="btn btn-primary">Salvar</button>
+
   <!--=============================================fim de formulario==========================================-->
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
@@ -201,6 +200,39 @@
   <script src="js/demo/datatables-demo.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
 
+
+      <script>
+
+          function salvar(){
+
+
+//Metodo para inserir fornecedor via ajax
+              $.ajax({
+                  type:'post',
+                  url: '../../Controller/projectoController.php',
+                  dataType:'html',
+                  data:{
+                      '_token':$('input[name=_token]').val(),
+                      'nome':$('input[name=nome]').val(),
+                      'objectivo':$('input[name=objectivo]').val(),
+                      'descricao':$('textarea[name=descricao]').val(),
+                      'detalhes':$('textarea[name=detalhes]').val(),
+                      'salvar':1
+
+                  },
+                  success:function(data){
+alert('alo mozambique');
+                      window.location.reload();
+
+                  },
+                  error:function (data) {
+                      console.log(data);
+                      alert("Erro ao tentar registar projecto, tente novamente");
+
+                  }
+              });
+          }
+      </script>
 </body>
 
 </html>

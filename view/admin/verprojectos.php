@@ -492,10 +492,10 @@ $resultado = mysqli_query($link,$sql);
               data:{
                   '_token':$('input[name=_token]').val(),
                   'nome':$('input[name=atnome]').val(),
-                  'id':$('input[name=atid]').val(),
                   'objectivo':$('input[name=atobjectivo]').val(),
                   'descricao':$('textarea[name=atdescricao]').val(),
                   'detalhes':$('textarea[name=atdetalhes]').val(),
+                  'id':$('input[name=atid]').val(),
                   'actualizar':1
 
               },

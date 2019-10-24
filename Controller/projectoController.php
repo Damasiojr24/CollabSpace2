@@ -1,5 +1,5 @@
 <?php
-include_once "../modal/conexao.php";
+include_once "../Conexao/conexao.php";
 include_once "../Modelo/projecto.php";
 
 
@@ -130,7 +130,7 @@ function actualizar(){
     $projeto->setObjectivo($_POST['objectivo']);
     $objectivo=$projeto->getObjectivo();
 
-    $sql="UPDATE projecto set nome='".$nome."', descricao='".$descricao."', detalhes='".$detalhes."', objectivo'".$objectivo."' WHERE id='".$id."'";
+    $sql="UPDATE projecto set nome='".$nome."', descricao='".$descricao."', detalhes='".$detalhes."', objectivo='".$objectivo."' WHERE id='".$id."'";
     mysqli_query($link,$sql);
     echo json_decode(array("statusCode"=>200));
     mysqli_close($link);

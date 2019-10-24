@@ -51,24 +51,24 @@ if (isset($_POST['submit'])) {
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="../img/favicon.png" rel="icon">
-  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../Public/img/favicon.png" rel="icon">
+  <link href="../Public/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../lib/animate/animate.min.css" rel="stylesheet">
-  <link href="../lib/venobox/venobox.css" rel="stylesheet">
-  <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../css/hover.css" rel="stylesheet">
+  <link href="../Public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../Public/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../Public/lib/venobox/venobox.css" rel="stylesheet">
+  <link href="../Public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../Public/css/hover.css" rel="stylesheet">
   <!-- Main Stylesheet File -->
-  <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/style2.css" rel="stylesheet">
+  <link href="../Public/css/style.css" rel="stylesheet">
+    <link href="../Public/css/style2.css" rel="stylesheet">
     <style type="text/css">
       .card-body {
     -ms-flex: 1 1 auto;
@@ -233,21 +233,21 @@ if (isset($_POST['submit'])) {
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="../lib/jquery/jquery.min.js"></script>
-  <script src="../lib/jquery/jquery-migrate.min.js"></script>
-  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../lib/easing/easing.min.js"></script>
-  <script src="../lib/superfish/hoverIntent.js"></script>
-  <script src="../lib/superfish/superfish.min.js"></script>
-  <script src="../lib/wow/wow.min.js"></script>
-  <script src="../lib/venobox/venobox.min.js"></script>
-  <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../Public/lib/jquery/jquery.min.js"></script>
+  <script src="../Public/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../Public/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../Public/lib/easing/easing.min.js"></script>
+  <script src="../Public/lib/superfish/hoverIntent.js"></script>
+  <script src="../Public/lib/superfish/superfish.min.js"></script>
+  <script src="../Public/lib/wow/wow.min.js"></script>
+  <script src="../Public/lib/venobox/venobox.min.js"></script>
+  <script src="../Public/lib/owlcarousel/owl.carousel.min.js"></script>
 
   <!-- Contact Form JavaScript File -->
   <script src="../contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="../js/main.js"></script>
+  <script src="../Public/js/main.js"></script>
    </footer><!-- #footer -->
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-include "../../modal/conexao.php";
+include "../../Conexao/conexao.php";
 $sql = "SELECT * FROM projecto";
 $resultado = mysqli_query($link,$sql); 
  ?>
@@ -19,13 +19,14 @@ $resultado = mysqli_query($link,$sql);
   <title>CollabSpace</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../../Public/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="../../Public/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Public/css/modals.css">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="../../Public/admin/css/sb-admin.css" rel="stylesheet">
   <style type="text/css">
     
     .th1{
@@ -127,13 +128,7 @@ $resultado = mysqli_query($link,$sql);
 
       <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Overview</li>
-        </ol>
+
         <div class="#">
            <div class="card mb-3">
           <div class="card-header">
@@ -301,7 +296,7 @@ $resultado = mysqli_query($link,$sql);
       <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Remover</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
@@ -318,25 +313,79 @@ $resultado = mysqli_query($link,$sql);
           </div>
       </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="modalsucessoremovido" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header header-color-modal bg-color-1">
+                  <h4 class="modal-title">Projecto</h4>
+                  <div class="modal-close-area modal-close-df">
+                      <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                  </div>
+              </div>
+              <div class="modal-body">
+                  <i class="educate-icon educate-checked modal-check-pro"></i>
+                  <h2>Sucesso!</h2>
+                  <p>Projecto removido com sucesso!</p>
+              </div>
+              <div class="modal-footer">
+                  <a data-dismiss="modal" onclick="actualizarPagina()">Sair</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div id="modalsucessoactualizado" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header header-color-modal bg-color-1">
+                  <h4 class="modal-title">Projecto</h4>
+                  <div class="modal-close-area modal-close-df">
+                      <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                  </div>
+              </div>
+              <div class="modal-body">
+                  <i class="educate-icon educate-checked modal-check-pro"></i>
+                  <h2>Sucesso!</h2>
+                  <p>Projecto actulaizado com sucesso!</p>
+              </div>
+              <div class="modal-footer">
+                  <a data-dismiss="modal" onclick="actualizarPagina()">Sair</a>
+              </div>
+          </div>
+      </div>
+  </div>
   <!--======================================================================================================-->
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Public/admin/vendor/jquery/jquery.min.js"></script>
+  <script src="../../Public/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../../Public/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="vendor/datatables/jquery.dataTables.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <script src="../../Public/admin/vendor/chart.js/Chart.min.js"></script>
+  <script src="../../Public/admin/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../../Public/admin/vendor/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin.min.js"></script>
+  <script src="../../Public/admin/js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="../../Public/admin/js/demo/datatables-demo.js"></script>
+  <script src="../../Public/admin/js/demo/chart-area-demo.js"></script>
 
 
   <script>
@@ -426,7 +475,7 @@ $resultado = mysqli_query($link,$sql);
 
               },
               error:function () {
-                  alert("Erro ao tentar registar, tente novamente");
+                  alert("Erro ao tentar buscar projecto, tente novamente");
 
               }
           });
@@ -457,13 +506,14 @@ $resultado = mysqli_query($link,$sql);
 
               },
               success:function(data){
-                  alert('Removido com sucesso!');
-                  window.location.reload();
+                  $('#modalsucessoremovido').modal('show');
+                  setTimeout(function(){  window.location.reload(); }, 4000);
+
 
               },
               error:function (data) {
                   console.log(data);
-                  alert("Erro ao tentar registar projecto, tente novamente");
+                  alert("Erro ao tentar remover projecto, tente novamente");
 
               }
           });
@@ -500,8 +550,9 @@ $resultado = mysqli_query($link,$sql);
 
               },
               success:function(data){
-                  alert("Actualizado");
-                  window.location.reload();
+                 $('#modalsucessoactualizado').modal('show');
+                  setTimeout(function(){  window.location.reload(); }, 4000);
+
 
               },
               error:function (data) {
@@ -510,6 +561,11 @@ $resultado = mysqli_query($link,$sql);
 
               }
           });
+      }
+
+
+      function actualizarPagina() {
+          window.location.reload();
       }
 
   </script>

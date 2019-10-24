@@ -1,7 +1,7 @@
 
 
 <?php 
-include "../modal/conexao.php";
+include "../Conexao/conexao.php";
 $id= $_GET['id'];
 $sql = "SELECT * FROM projecto WHERE id='$id'";
 $resultado = mysqli_query($link,$sql); 
@@ -19,24 +19,25 @@ $resultado = mysqli_query($link,$sql);
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="../img/favicon.png" rel="icon">
-  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../Public/img/favicon.png" rel="icon">
+  <link href="../Public/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Public/bootstrap/js/dist/modal.js">
 
   <!-- Libraries CSS Files -->
-  <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../lib/animate/animate.min.css" rel="stylesheet">
-  <link href="../lib/venobox/venobox.css" rel="stylesheet">
-  <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../css/hover.css" rel="stylesheet">
+  <link href="../Public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../Public/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../Public/lib/venobox/venobox.css" rel="stylesheet">
+  <link href="../Public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../Public/css/hover.css" rel="stylesheet">
   <!-- Main Stylesheet File -->
-  <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/style2.css" rel="stylesheet">
+  <link href="../Public/css/style.css" rel="stylesheet">
+    <link href="../Public/css/style2.css" rel="stylesheet">
     <style type="text/css">
       .card-body {
     -ms-flex: 1 1 auto;
@@ -184,17 +185,26 @@ $resultado = mysqli_query($link,$sql);
           </div>
            
             <div class="col-sm-6">
-                 <button type="button" class="btn btn-success btn-lg btn-colaborar hvr-grow" data-toggle="modal" data-target="#myModal">Colaborar</button>      
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Launch demo modal
+                </button>
+                 <button type="button" onclick="modal()" class="btn btn-success btn-lg btn-colaborar hvr-grow" data-toggle="modal" data-target="#myModal">Colaborar</button>
            </div>
         </div>
 
+            <script>
+                function modal() {
+                    $('#modale').modal('show');
 
-        
+                }
+            </script>
+
+
 
 
     </section>
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="modale" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -204,29 +214,30 @@ $resultado = mysqli_query($link,$sql);
         <h4 class="modal-title">Colaborar</h4>
       </div>
       <div class="modal-body">
-       <form action="project.php" enctype="multupart/form-data">
+
   <div class="form-group">
     <label for="email">Nome Completo:</label>
-    <input type="name" name="username" class="form-control" id="email" required="">
+    <input type="text" name="username" class="form-control" id="email" required="">
   </div>
   <div class="form-group">
-    <label for="email">Email address:</label>
+   <label for="email">Assunto</label>
+   <input type="text" name="subject" class="form-control" id="email" required="">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
     <input type="email" name="email" class="form-control" id="email" required>
   </div>
+
   <div class="form-group">
-    <label for="pwd">CV:</label>
-    <input type="file" name="attachment" class="form-control" id="pwd"required>
-  </div>
-  <div class="form-group">
-    <label for="pwd">Text:</label>
-    <textarea class="form-group" name="msg" placeholder="Subject"required></textarea>
+    <label for="pwd">Texto:</label>
+    <textarea class="form-group" name="message" rows="5" cols="55" placeholder="Subject"required></textarea>
     
   </div>
-  <button type="submit" name="submit" value="Send Email" class="btn btn-success">Submiter</button>
-</form>
+  <button type="button"  onclick="enviaremail()" class="btn btn-success">Submiter</button>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">fechar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">fechar</button>
       </div>
     </div>
 
@@ -235,6 +246,34 @@ $resultado = mysqli_query($link,$sql);
    
   </main>
 
+
+
+
+
+
+
+
+
+  <div id="modalsucesso" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header header-color-modal bg-color-1">
+                  <h4 class="modal-title">Projecto</h4>
+                  <div class="modal-close-area modal-close-df">
+                      <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                  </div>
+              </div>
+              <div class="modal-body">
+                  <i class="educate-icon educate-checked modal-check-pro"></i>
+                  <h2>Sucesso!</h2>
+                  <p>Projecto actulaizado com sucesso!</p>
+              </div>
+              <div class="modal-footer">
+                  <a data-dismiss="modal" onclick="actualizarPagina()">Sair</a>
+              </div>
+          </div>
+      </div>
+  </div>
 
   <!--========================--
     Footer
@@ -314,21 +353,51 @@ $resultado = mysqli_query($link,$sql);
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="../lib/jquery/jquery.min.js"></script>
-  <script src="../lib/jquery/jquery-migrate.min.js"></script>
-  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../lib/easing/easing.min.js"></script>
-  <script src="../lib/superfish/hoverIntent.js"></script>
-  <script src="../lib/superfish/superfish.min.js"></script>
-  <script src="../lib/wow/wow.min.js"></script>
-  <script src="../lib/venobox/venobox.min.js"></script>
-  <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../Public/lib/jquery/jquery.min.js"></script>
+  <script src="../Public/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../Public/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../Public/lib/easing/easing.min.js"></script>
+  <script src="../Public/lib/superfish/hoverIntent.js"></script>
+  <script src="../Public/lib/superfish/superfish.min.js"></script>
+  <script src="../Public/lib/wow/wow.min.js"></script>
+  <script src="../Public/lib/venobox/venobox.min.js"></script>
+  <script src="../Public/lib/owlcarousel/owl.carousel.min.js"></script>
 
   <!-- Contact Form JavaScript File -->
   <script src="../contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="../js/main.js"></script>
+  <script src="../Public/js/main.js"></script>
+
+
+  <script>
+      function enviaremail(){
+
+
+//Metodo para inserir fornecedor via ajax
+          $.ajax({
+              type:'post',
+              url: '../Controller/processaremail.php',
+              dataType:'html',
+              data:{
+                  '_token':$('input[name=_token]').val(),
+                  'subject':$('input[name=subject]').val(),
+                  'email':$('input[name=email]').val(),
+                  'message':$('input[name=message]').val(),
+
+              },
+              success:function(dataResult){
+               $('#modalsucesso').modal('show');
+                  },
+              error:function () {
+                  alert("Erro ao tentar registar, tente novamente");
+
+              }
+
+
+          });
+      }
+  </script>
 </body>
 
 </html>

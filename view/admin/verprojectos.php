@@ -48,7 +48,7 @@ $resultado = mysqli_query($link,$sql);
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">CollabSpace</a>
+    <a class="navbar-brand mr-1" href="../admin/">CollabSpace</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -118,9 +118,14 @@ $resultado = mysqli_query($link,$sql);
           <span>Ver Projectos</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="registrar.php">
+        <a class="nav-link" href="registarprojecto.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Registrar Projectos</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="olaboradores.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Colaboradores</span></a>
       </li>
     </ul>
 
@@ -160,7 +165,7 @@ $resultado = mysqli_query($link,$sql);
                  <?php while($dados = mysqli_fetch_array($resultado)){ ?>
                   <tr>
                     <td><?php echo $dados['nome']; ?></td>
-                    <td><?php echo $dados['objectivo']; ?></td>
+                    <td><?php echo $dados['detalhes']; ?></td>
                       <td><button type="submit" class="btn badge-primary" onclick="buscarParaDetalhes(<?php echo $dados['id'];?>)">Detalhes</button></td>
                       <td><button type="submit" class="btn badge-success"  onclick="buscarParaEditar(<?php echo $dados['id'];?>)">Actualizar</button></td>
                       <td><button class="btn btn-danger"  onclick="buscarParaRemover(<?php echo $dados['id'];?>)">Remover</button></td>
@@ -423,6 +428,7 @@ $resultado = mysqli_query($link,$sql);
 
 
       function buscarParaDetalhes(data) {
+        console.log(data);
           $.ajax({
               type:'post',
               url: '../../Controller/projectoController.php',
@@ -455,14 +461,15 @@ $resultado = mysqli_query($link,$sql);
 
 
       function buscarParaRemover(data) {
+        console.log(data)
           $.ajax({
               type:'post',
               url: '../../Controller/projectoController.php',
-              dataType: 'JSON',
+              dataType:'JSON',
               data:{
                   '_token':$('input[name=_token]').val(),
                   'id':data,
-                  'buscarpararemover' :1
+                  'buscarpararemover':1
               },
               success:function(data){
                   document.getElementById("nomeremover").innerHTML=data[0].nome+"?";

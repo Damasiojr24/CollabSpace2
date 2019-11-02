@@ -5,6 +5,7 @@ $mail = new PHPMailer(true);
 if(isset($_POST['btn_send']))
 {
     $email      = strip_tags($_POST['email']);
+    $email2      = strip_tags($_POST['email2']);
     $subject    = strip_tags($_POST['subject']);
     $text_message    = "Hello";
     $message  = strip_tags($_POST['message']);
@@ -26,7 +27,7 @@ if(isset($_POST['btn_send']))
         $mail->SetFrom('edmilsondavid2@gmail.com','Edmilson David Novela');
         $mail->AddReplyTo("edmilsondavid2@gmail.com","Edmilson David Novela");
         $mail->Subject    = $subject;
-        $mail->Body    = $message;
+        $mail->Body    = $message.'</br></br></br>'.$email2;
         $mail->AltBody    = $message;
 
         if($mail->Send())

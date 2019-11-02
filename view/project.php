@@ -185,9 +185,7 @@ $resultado = mysqli_query($link,$sql);
           </div>
            
             <div class="col-sm-6">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Launch demo modal
-                </button>
+      
                  <button type="button" onclick="modal()" class="btn btn-success btn-lg btn-colaborar hvr-grow" data-toggle="modal" data-target="#myModal">Colaborar</button>
            </div>
         </div>
@@ -224,9 +222,13 @@ $resultado = mysqli_query($link,$sql);
    <input type="text" name="subject" class="form-control" id="email" required="">
   </div>
   <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" name="email" class="form-control" id="email" required>
+        <input type="email" name="email" class="form-control" id="email" value="damasiojunior7@gmail.com">
   </div>
+    <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" name="email2" class="form-control" id="email" required>
+  </div>
+
 
   <div class="form-group">
     <label for="pwd">Texto:</label>
@@ -383,12 +385,17 @@ $resultado = mysqli_query($link,$sql);
                   '_token':$('input[name=_token]').val(),
                   'subject':$('input[name=subject]').val(),
                   'email':$('input[name=email]').val(),
-                  'message':$('input[name=message]').val(),
+                  'email2':$('input[name=email2]').val(),
+                  'message':$('textarea[name=message]').val(),
+                  'btn_send':1
 
               },
               success:function(dataResult){
+    
                $('#modalsucesso').modal('show');
+               setTimeout(function(){window.location.reload();},3000);  
                   },
+
               error:function () {
                   alert("Erro ao tentar registar, tente novamente");
 

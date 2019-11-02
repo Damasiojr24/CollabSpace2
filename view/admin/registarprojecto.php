@@ -20,6 +20,12 @@
   <!-- Custom styles for this template-->
   <link href="../../Public/admin/css/sb-admin.css" rel="stylesheet">
 
+  <style type="text/css">
+        .bg-dark {
+    background-color: #087F61!important;
+}
+  </style>
+
 </head>
 
 <body id="page-top">
@@ -101,7 +107,7 @@
           <span>Registrar Projectos</span></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="olaboradores.php">
+        <a class="nav-link" href="colaboradores.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Colaboradores</span></a>
       </li>
@@ -221,7 +227,7 @@
 
                   },
                   success:function(data){
-alert('alo mozambique');
+alert('Success');
                       window.location.reload();
 
                   },

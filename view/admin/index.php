@@ -19,6 +19,11 @@
 
   <!-- Custom styles for this template-->
   <link href="../../Public/admin/css/sb-admin.css" rel="stylesheet">
+  <style type="text/css">
+        .bg-dark {
+    background-color: #087F61!important;
+}
+  </style>
 
 </head>
 

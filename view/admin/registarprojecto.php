@@ -95,22 +95,48 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-  
-      <li class="nav-item">
-        <a class="nav-link" href="verprojectos.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Ver Projectos</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="registrar.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Registrar Projectos</span></a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="colaboradores.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Colaboradores</span></a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.php">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Home</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="verprojectos.php">
+                <i class="fas fa-fw fa-hanukiah"></i>
+                <span>Ver Projectos</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="registarprojecto.php">
+                <i class="fas fa-fw fa-save"></i>
+                <span>Registrar Projectos</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="mensagem.php">
+                <i class="fas fa-fw fa-envelope-open"></i>
+                <span>Mensagens Enviadas</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="colaboradores.php">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Colaboradores</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="registarecontrolarestagiodeprojecto.php">
+                <i class="fas fa-fw fa-github"></i>
+                <span>Registar e controlar o Estagio de projecto</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="relatorio.php">
+                <i class="fas fa-fw fa-chart-bar"></i>
+                <span>Relatorio</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="perfil.php">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Perfil</span></a>
+        </li>
+
     </ul>
 
     <div id="content-wrapper">

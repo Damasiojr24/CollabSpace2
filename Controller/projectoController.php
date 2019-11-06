@@ -56,7 +56,7 @@ if(isset($_POST['buscarparaeditar'])){
 
 if(isset($_POST['buscarparardetalhes'])){
     $id=$_POST['id'];
-    $sql = "SELECT * FROM projecto where id=$id";
+    $sql = "SELECT * FROM projecto where id=1";
     $resultado= mysqli_query($link,$sql);
     while ($row=mysqli_fetch_assoc($resultado)){
         $id=$row['id'];

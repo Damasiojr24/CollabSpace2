@@ -87,9 +87,9 @@ $resultado = mysqli_query($link,$sql);
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="../view/index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#about">Sobre Nós</a></li>
          
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contactos</a></li>
   
         </ul>
       </nav><!-- #nav-menu-container          <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li> -->
@@ -105,26 +105,7 @@ $resultado = mysqli_query($link,$sql);
     <!--==========================
       About Section
     ============================
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h2>About The Event</h2>
-            <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut
-              accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in
-              est ut optio sequi unde.</p>
-          </div>
-          <div class="col-lg-3">
-            <h3>Where</h3>
-            <p>Downtown Conference Center, New York</p>
-          </div>
-          <div class="col-lg-3">
-            <h3>When</h3>
-            <p>Monday to Wednesday<br>10-12 December</p>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     ==========================
       Speakers Section
@@ -208,7 +189,7 @@ $resultado = mysqli_query($link,$sql);
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" onclick="fechar()">&times;</button>
         <h4 class="modal-title">Colaborar</h4>
       </div>
       <div class="modal-body">
@@ -239,7 +220,7 @@ $resultado = mysqli_query($link,$sql);
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">fechar</button>
+        <button type="button" class="btn btn-success" onclick="fechar()" data-dismiss="modal">fechar</button>
       </div>
     </div>
 
@@ -403,6 +384,13 @@ class="close" data-dismiss="modal"
 
 
           });
+      }
+
+
+
+
+      function fechar() {
+          window.location.reload();
       }
   </script>
 </body>

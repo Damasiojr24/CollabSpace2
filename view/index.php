@@ -62,9 +62,9 @@ $resultado = mysqli_query($link,$sql);
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#about">Sobre Nós</a></li>
          
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contactos</a></li>
   
         </ul>
       </nav><!-- #nav-menu-container          <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li> -->
@@ -154,41 +154,39 @@ $resultado = mysqli_query($link,$sql);
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <img src="img/logo.png" alt="CollabSpace">
-            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.</p>
+            <h1>DSM</h1>
+            <p>O DSM é um departamento de desenvolvimento de softwares, pertecente ao Centro de Informatica da Universidade Eduardo Mondlane.
+                Atualmente trabalha em projetos de analise e desenvolvimento de softwares com empresas
+                dos mais variados ramos de atividades, o princípio básico é desenvolver
+                softwares adaptados ao processo de cada cliente.</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Links Uteis</h4>
             <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">UEM</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">DSMWEBSITE</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">CIUEM</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">CISCO UEM</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">DSM</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
+              <h4>Sobre CollabSpace</h4>
+              <p style="color: white">É um projecto da DSM que visa oferecer oportunidades a jovens estudantes informaticos que estao a busca de uma expriencia professional no Mercado de trabalho,
+                  que queira participar num projecto onde pode adquir muitas habilidades em programacao ou area relacionada.</p>
+
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
+            <h4>Nossos contactos</h4>
             <p>
-              A108 Adam Street <br>
-              Maputo, NY 535022<br>
-              MOZ <br>
-              <strong>Phone:</strong> +258 85589 55488 55<br>
-              <strong>Email:</strong> info@gmail.com<br>
-            </p>
+                Campus Universitario <br>
+                Principal, 3453, UEM <br>
+                Maputo - Mocambique<br>
+                <strong>Telefone:</strong> 21 49 3724<br>
+                <strong>Email:</strong> info@example.com<br></p>
 
             <div class="social-links">
               <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>

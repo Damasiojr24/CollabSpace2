@@ -15,6 +15,10 @@ $resultado = mysqli_query($link,$sql);
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+    <link rel="stylesheet" href="../../Public/bootstrapp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Public/bootstrapp/css/bootstrap.css">
+    <link rel="stylesheet" href="../../Public/bootstrapp/js/bootstrap.min.js">
+    <link rel="stylesheet" href="../../Public/bootstrapp/js/bootstrap.js">
 
   <title>CollabSpace</title>
 
@@ -111,22 +115,49 @@ $resultado = mysqli_query($link,$sql);
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-  
+
+        <li class="nav-item">
+            <a class="nav-link" href="index.php">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Home</span></a>
+        </li>
+
       <li class="nav-item">
         <a class="nav-link" href="verprojectos.php">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-hanukiah"></i>
           <span>Ver Projectos</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="registarprojecto.php">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-save"></i>
           <span>Registrar Projectos</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="olaboradores.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Colaboradores</span></a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="mensagem.php">
+                <i class="fas fa-fw fa-envelope-open"></i>
+                <span>Mensagens Enviadas</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="colaboradores.php">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Colaboradores</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="registarecontrolarestagiodeprojecto.php">
+                <i class="fas fa-fw fa-github"></i>
+                <span>Registar e controlar o Estagio de projecto</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="relatorio.php">
+                <i class="fas fa-fw fa-chart-bar"></i>
+                <span>Relatorio</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="perfil.php">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Perfil</span></a>
+        </li>
+
     </ul>
 
     <div id="content-wrapper">
@@ -175,6 +206,9 @@ $resultado = mysqli_query($link,$sql);
            <?php } ?>
                 </tbody>
               </table>
+
+
+
             </div>
           </div>
         </div>
@@ -232,7 +266,7 @@ $resultado = mysqli_query($link,$sql);
           <div class="modal-content">
               <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Actualizar dados do projecto</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss="modal" onclick="fechar()"  aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
@@ -259,7 +293,7 @@ $resultado = mysqli_query($link,$sql);
                   </form>
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-secondary" onclick="fechar()"  data-dismiss="modal">Fechar</button>
                   <button type="button" class="btn btn-primary" onclick="actualizar()">Salvar</button>
               </div>
           </div>
@@ -279,7 +313,7 @@ $resultado = mysqli_query($link,$sql);
           <div class="modal-content">
               <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalCenterTitle">Mais detalhes</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss="modal" onclick="fechar()"  aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
@@ -288,7 +322,7 @@ $resultado = mysqli_query($link,$sql);
                   <p id="descricaodetalhes"></p>
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-secondary" onclick="fechar()"  data-dismiss="modal">Fechar</button>
               </div>
           </div>
       </div>
@@ -302,7 +336,7 @@ $resultado = mysqli_query($link,$sql);
           <div class="modal-content">
               <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalCenterTitle">Remover</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss="modal" onclick="fechar()"  aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
@@ -312,7 +346,7 @@ $resultado = mysqli_query($link,$sql);
               </div>
               <input type="number" id="idremover" name="idremoverp" hidden>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Nao</button>
+                  <button type="button" class="btn btn-secondary" onclick="fechar()" data-dismiss="modal">Nao</button>
                   <button type="button" class="btn btn-primary" onclick="remover()">Sim</button>
               </div>
           </div>
@@ -399,6 +433,7 @@ $resultado = mysqli_query($link,$sql);
               type:'post',
               url: '../../Controller/projectoController.php',
               dataType: 'JSON',
+              cache: false,
               data:{
                   '_token':$('input[name=_token]').val(),
                   'id':data,
@@ -417,7 +452,8 @@ $resultado = mysqli_query($link,$sql);
 
 
               },
-              error:function () {
+              error:function (data) {
+                  console.log(data);
                   alert("Erro ao tentar registar, tente novamente");
 
               }
@@ -461,7 +497,7 @@ $resultado = mysqli_query($link,$sql);
 
 
       function buscarParaRemover(data) {
-        console.log(data)
+        console.log(data);
           $.ajax({
               type:'post',
               url: '../../Controller/projectoController.php',
@@ -572,6 +608,12 @@ $resultado = mysqli_query($link,$sql);
 
 
       function actualizarPagina() {
+          window.location.reload();
+      }
+
+
+
+      function fechar() {
           window.location.reload();
       }
 

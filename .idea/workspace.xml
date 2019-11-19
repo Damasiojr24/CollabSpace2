@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ae00fe-3487-4d01-ad9f-bb8fbb4fc49b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Controller/loginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/login/site.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/login/site.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/colaboradores.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/mensagem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/perfil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/registarecontrolarestagiodeprojecto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin/relatorio.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/projectoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/projectoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/registarprojecto.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/registarprojecto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/tables.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/verprojectos.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/verprojectos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/project.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,29 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/registarprojecto.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2346">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/verprojectos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="614" lean-forward="true" selection-start-line="614" selection-end-line="617" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/project.php">
+        <entry file="file://$PROJECT_DIR$/Controller/projectoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="222" column="71" selection-start-line="222" selection-start-column="71" selection-end-line="222" selection-end-column="71" />
+            <state relative-caret-position="526">
+              <caret line="84" column="48" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -77,7 +42,6 @@
         <option value="$PROJECT_DIR$/Modelo/projecto.php" />
         <option value="$PROJECT_DIR$/view/admin/vendor/datatables/jquery.dataTables.js" />
         <option value="$PROJECT_DIR$/modal/conexao.php" />
-        <option value="$PROJECT_DIR$/Controller/projectoController.php" />
         <option value="$PROJECT_DIR$/view/index.php" />
         <option value="$PROJECT_DIR$/view/admin/colaboradores.php" />
         <option value="$PROJECT_DIR$/view/admin/mensagem.php" />
@@ -91,6 +55,7 @@
         <option value="$PROJECT_DIR$/Controller/logout.php" />
         <option value="$PROJECT_DIR$/view/admin/verprojectos.php" />
         <option value="$PROJECT_DIR$/view/project.php" />
+        <option value="$PROJECT_DIR$/Controller/projectoController.php" />
       </list>
     </option>
   </component>
@@ -115,6 +80,11 @@
             <path>
               <item name="CollabSpace2" type="b2602c69:ProjectViewProjectNode" />
               <item name="CollabSpace2" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CollabSpace2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CollabSpace2" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -127,7 +97,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/PROGRAMACAO-WEB/davidDefesa" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -177,18 +147,18 @@
       <workItem from="1572793816772" duration="11129000" />
       <workItem from="1572854308345" duration="5009000" />
       <workItem from="1572945323501" duration="1744000" />
-      <workItem from="1572947976132" duration="1025000" />
+      <workItem from="1572947976132" duration="1651000" />
+      <workItem from="1573038233504" duration="1277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69549000" />
+    <option name="totallyTimeSpent" value="71452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29425114" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2987897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -294,13 +264,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Inscricoes/Controlo/Json.php" />
     <entry file="file://$PROJECT_DIR$/modal/conexao.php" />
-    <entry file="file://$PROJECT_DIR$/Controller/projectoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1317">
-          <caret line="107" column="32" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -411,8 +374,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/admin/verprojectos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="614" lean-forward="true" selection-start-line="614" selection-end-line="617" selection-end-column="7" />
+        <state relative-caret-position="10438">
+          <caret line="614" selection-start-line="614" selection-end-line="617" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -420,6 +383,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="222" column="71" selection-start-line="222" selection-start-column="71" selection-end-line="222" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/projectoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="84" column="48" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
         </state>
       </provider>
     </entry>

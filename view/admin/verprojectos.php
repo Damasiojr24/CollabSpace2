@@ -283,7 +283,7 @@ $resultado = mysqli_query($link,$sql);
 
                       <div class="form-group">
                           <label for="message-text" class="col-form-label">Descricao</label>
-                          <textarea class="form-control" id="descricao" name="atobjectivo"></textarea>
+                          <textarea class="form-control" id="descricao" name="atdescricao"></textarea>
                       </div>
                       <div class="form-group">
                           <label for="message-text" class="col-form-label">Detalhes</label>

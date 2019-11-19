@@ -27,7 +27,7 @@ $resultado = mysqli_query($link,$sql);
 
   <!-- Bootstrap CSS File -->
   <link href="../Public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Public/bootstrap/js/dist/modal.js">
+  <link rel="stylesheet" href="../Public/bootstrap/js/dist/modal.js">
 
   <!-- Libraries CSS Files -->
   <link href="../Public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -202,7 +202,7 @@ $resultado = mysqli_query($link,$sql);
    <label for="email">Assunto</label>
    <input type="text" name="subject" class="form-control" id="email" required="">
   </div>
-  <div class="form-group">
+  <div class="form-group" style="display:none;">
         <input type="email" name="email" class="form-control" id="email" value="damasiojunior7@gmail.com">
   </div>
     <div class="form-group">
@@ -243,7 +243,7 @@ $resultado = mysqli_query($link,$sql);
               <div class="modal-header header-color-modal bg-color-1">
                   <h4 class="modal-title">Projecto</h4>
                   <div class="modal-close-area modal-close-df">
-                      <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                      <button  class="close" data-dismiss="modal" href="#">&times;</button>
                   </div>
               </div>
               <div class="modal-body">
@@ -252,7 +252,7 @@ $resultado = mysqli_query($link,$sql);
                   <p>Projecto actulaizado com sucesso!</p>
               </div>
               <div class="modal-footer">
-                  <a data-dismiss="modal" onclick="actualizarPagina()">Sair</a>
+                  <button data-dismiss="modal" onclick="actualizarPagina()">Sair</button>
               </div>
           </div>
       </div>

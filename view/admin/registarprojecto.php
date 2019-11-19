@@ -156,11 +156,11 @@
 
               <div class="form-group">
                   <label for="exampleInputEmail1">Nome</label>
-                  <input type="text" name="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="text" name="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Projecto">
               </div>
               <div class="form-group">
                   <label for="exampleInputPassword1">Objectivos</label>
-                  <input type="text" name="objectivo" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="text" name="objectivo" class="form-control" id="exampleInputPassword1" placeholder="Objectivo">
               </div>
               <div class="form-group">
                   <label for="exampleInputPassword1">Descricao</label>

@@ -27,7 +27,7 @@ $resultado = mysqli_query($link,$sql);
 
   <!-- Bootstrap CSS File -->
   <link href="../Public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Public/bootstrap/js/dist/modal.js">
+  <link rel="stylesheet" href="../Public/bootstrap/js/dist/modal.js">
 
   <!-- Libraries CSS Files -->
   <link href="../Public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -202,7 +202,7 @@ $resultado = mysqli_query($link,$sql);
    <label for="email">Assunto</label>
    <input type="text" name="subject" class="form-control" id="email" required="">
   </div>
-  <div class="form-group">
+  <div class="form-group" style="display:none;">
         <input type="email" name="email" class="form-control" id="email" value="damasiojunior7@gmail.com">
   </div>
     <div class="form-group">
@@ -233,7 +233,7 @@ $resultado = mysqli_query($link,$sql);
 
 
 
-class="close" data-dismiss="modal"
+
 
 
 

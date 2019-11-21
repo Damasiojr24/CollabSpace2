@@ -1,3 +1,18 @@
+<?php
+include "../../Conexao/conexao.php";
+/*$sql = "SELECT * FROM pedidosercolaborador";
+$resultado = mysqli_query($link,$sql);*/
+
+
+
+
+$sql = "SELECT pedidosercolaborador.email as email, pedidosercolaborador.nome as assunto, pedidosercolaborador.cv as mensagem, projecto.nome as projectonome, projecto.objectivo as objectivo
+FROM pedidosercolaborador
+INNER JOIN projecto ON pedidosercolaborador.projecto_id=projecto.id";
+$resultado = mysqli_query($link,$sql);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,7 +166,58 @@
           <li class="breadcrumb-item active">Overview</li>
         </ol>
 
-        <h1>Bem Vindo a pagina do Admin</h1>
+          <div class="#">
+              <div class="card mb-3">
+                  <div class="card-header">
+                      <i class="fas fa-table"></i>
+                      Tabela de dados dos projectos</div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                              <tr class="trc">
+                                  <th class="th1">Assunto</th>
+                                  <th>Email</th>
+                                  <th>Mensagem</th>
+                                  <th>Nome do projecto</th>
+                                  <th>Objectivos do projecto</th>
+                                  <th>Admitir</th>
+                                  <th>Nao admitir</th>
+                              </tr>
+                              </thead>
+                              <tfoot>
+                              <tr>
+                                  <th class="th1">Assunto</th>
+                                  <th>Email</th>
+                                  <th>Mensagem</th>
+                                  <th>Nome do projecto</th>
+                                  <th>Objectivos do projecto</th>
+                                  <th>Admitir</th>
+                                  <th>Nao admitir</th>
+                              </tr>
+                              </tfoot>
+                              <tbody>
+                              <?php while($dados = mysqli_fetch_array($resultado)){ ?>
+                                  <tr>
+                                      <td><?php echo $dados['assunto']; ?></td>
+                                      <td><?php echo $dados['email']; ?></td>
+                                      <td><?php echo $dados['mensagem']; ?></td>
+                                      <td><?php echo $dados['projectonome']; ?></td>
+                                      <td><?php echo $dados['objectivo']; ?></td>
+                                      <th>Admitir</th>
+                                      <th>Nao admitir</th>
+
+
+                                  </tr>
+                              <?php } ?>
+                              </tbody>
+                          </table>
+
+
+
+                      </div>
+                  </div>
+              </div>
 
 
       <!-- Sticky Footer -->

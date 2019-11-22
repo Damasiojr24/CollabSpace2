@@ -162,12 +162,12 @@ $resultado = mysqli_query($link,$sql);
 
       
           <div class="col-sm-6">
-                <button type="button" class="btn btn-success btn-lg btn-pdf btn-download hvr-grow">Documentation PDF</button>        
+                <a type="button" href="../view/index.php" class="btn btn-success btn-lg btn-pdf btn-download hvr-grow">Voltar</a>        
           </div>
            
             <div class="col-sm-6">
       
-                 <button type="button" onclick="modal()" class="btn btn-success btn-lg btn-colaborar hvr-grow" data-toggle="modal" data-target="#myModal">Colaborar</button>
+                 <a type="button" onclick="modal()" class="btn btn-success btn-lg btn-colaborar hvr-grow" data-toggle="modal" data-target="#myModal">Colaborar</a>
            </div>
         </div>
 

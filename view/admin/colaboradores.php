@@ -1,3 +1,10 @@
+<?php
+include "../../Conexao/conexao.php";
+$sql = "SELECT * FROM participantes";
+$resultado = mysqli_query($link,$sql); 
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +15,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+    <link rel="stylesheet" href="../../Public/bootstrapp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Public/bootstrapp/css/bootstrap.css">
+    <link rel="stylesheet" href="../../Public/bootstrapp/js/bootstrap.min.js">
+    <link rel="stylesheet" href="../../Public/bootstrapp/js/bootstrap.js">
 
   <title>CollabSpace</title>
 
@@ -16,13 +27,37 @@
 
   <!-- Page level plugin CSS-->
   <link href="../../Public/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Public/css/modals.css">
 
   <!-- Custom styles for this template-->
   <link href="../../Public/admin/css/sb-admin.css" rel="stylesheet">
   <style type="text/css">
-        .bg-dark {
+    
+    .th1{
+      width: 124px!important;
+    }
+
+    .trc{
+      background-color:#087F61!important;
+    color: #fff!important;
+    }
+    .bg-dark {
     background-color: #087F61!important;
 }
+ .stunner{
+  margin-left: 897px;
+    padding: 16px;
+    font-size: 15px;
+    width: 146px;
+ }
+
+ .titlex{
+      margin-right: 191px;
+ }
+ .head-title{
+  background-color: #28a745;
+    color: yellow;
+ }
   </style>
 
 </head>
@@ -31,7 +66,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">CollabSpace</a>
+    <a class="navbar-brand mr-1" href="../admin/">CollabSpace</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -101,16 +136,16 @@
                 <span>Home</span></a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="verprojectos.php">
-                <i class="fas fa-fw fa-hanukiah"></i>
-                <span>Ver Projectos</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="registarprojecto.php">
-                <i class="fas fa-fw fa-save"></i>
-                <span>Registrar Projectos</span></a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="verprojectos.php">
+          <i class="fas fa-fw fa-hanukiah"></i>
+          <span>Ver Projectos</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="registarprojecto.php">
+          <i class="fas fa-fw fa-save"></i>
+          <span>Registrar Projectos</span></a>
+      </li>
         <li class="nav-item">
             <a class="nav-link" href="mensagem.php">
                 <i class="fas fa-fw fa-envelope-open"></i>
@@ -118,7 +153,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="colaboradores.php">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="faS fa-user-friends"></i>
                 <span>Colaboradores</span></a>
         </li>
         <li class="nav-item">
@@ -143,15 +178,112 @@
 
       <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Overview</li>
-        </ol>
 
-        <h1>Bem Vindo a pagina do Admin</h1>
+                   <div class="#">
+           <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+           Tabela de dados dos projectos <button type="submit"  class="btn stunner badge-primary" data-toggle="modal" data-target="#myModal" >Registrar</button></div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr class="trc">
+                    <th class="th1">Nome </th>
+                    <th>Projecto</th>
+                    <th>Email</th>
+                    <th>Contacto</th>
+                     <th>Actualizar</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                     <th>Nome do Projecto</th>
+                      <th>Projecto</th>
+                    <th>Email</th>
+                    <th>Contacto</th>
+                     <th>Actualizar</th>
+                  </tr>
+                </tfoot>
+              <tbody>
+                 <?php while($dados = mysqli_fetch_array($resultado)){ ?>
+                  <tr>
+                    <td><?php echo $dados['nome']; ?></td>
+                    <td><?php echo $dados['nomedoprojecto']; ?></td>
+                    <td><?php echo $dados['email']; ?></td>
+                     <td><?php echo $dados['contacto']; ?></td>
+                      <td><button type="submit" class="btn badge-success"  onclick="buscarParaEditar(<?php echo $dados['id'];?>)" >Actualizar</button>
+
+
+
+    
+
+                        
+
+
+                  </tr>
+           <?php } ?>
+                </tbody>
+              </table>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+          
+        </div>
+
+<!-- Trigger the modal with a button -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header head-title">
+       
+        <h4 class="modal-title titlex">Registrar</h4>
+      </div>
+      <div class="modal-body">
+           <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nome Completo</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome a Registrar">
+   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Projecto</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Projecto">
+  
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Contacto</label>
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Numero de Telefone">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 
       <!-- Sticky Footer -->
@@ -174,28 +306,13 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!--======================================================================================================-->
   <!-- Bootstrap core JavaScript-->
   <script src="../../Public/admin/vendor/jquery/jquery.min.js"></script>
   <script src="../../Public/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Public/bootstrap/js/bootstrap.js"></script>
+    <script src="../../Public/bootstrap/js/bootstrap.min.js"></script>
+
 
   <!-- Core plugin JavaScript-->
   <script src="../../Public/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -211,6 +328,9 @@
   <!-- Demo scripts for this page-->
   <script src="../../Public/admin/js/demo/datatables-demo.js"></script>
   <script src="../../Public/admin/js/demo/chart-area-demo.js"></script>
+
+
+  
 
 </body>
 

@@ -139,7 +139,7 @@ $resultado = mysqli_query($link,$sql);
         </li>
         <li class="nav-item">
             <a class="nav-link" href="colaboradores.php">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-user-friends"></i>
                 <span>Colaboradores</span></a>
         </li>
         <li class="nav-item">
@@ -164,6 +164,12 @@ $resultado = mysqli_query($link,$sql);
 
       <div class="container-fluid">
 
+ <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Colaboradores</a>
+          </li>
+          <li class="breadcrumb-item active">Overview</li>
+        </ol>
 
         <div class="#">
            <div class="card mb-3">

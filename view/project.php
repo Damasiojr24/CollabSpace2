@@ -193,7 +193,9 @@ $resultado = mysqli_query($link,$sql);
         <h4 class="modal-title">Colaborar</h4>
       </div>
       <div class="modal-body">
-
+          <div class="form-group" >
+              <input type="number" name="idprojecto" class="form-control"  value="<?php echo $_GET['id']?>">
+          </div>
   <div class="form-group">
     <label for="email">Nome Completo:</label>
     <input type="text" name="username" class="form-control" id="email" required="">

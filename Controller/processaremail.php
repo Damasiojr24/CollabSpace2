@@ -1,4 +1,5 @@
 <?php
+include_once "../Conexao/conexao.php";
 require_once '../Public/mailer/class.phpmailer.php';
 // creates object
 $mail = new PHPMailer(true);
@@ -9,6 +10,7 @@ if(isset($_POST['btn_send']))
     $subject    = strip_tags($_POST['subject']);
     $text_message    = "Hello";
     $message  = strip_tags($_POST['message']);
+    $idprojecto=strip_tags($_POST['idprojecto']);
 
 
 
@@ -30,8 +32,13 @@ if(isset($_POST['btn_send']))
         $mail->Body    = $message.'</br></br></br>'.$email2;
         $mail->AltBody    = $message;
 
+        $sql = "INSERT INTO pedidosercolaborador(email,nome,cv,projecto_id) VALUES ('".$_POST['email']."','".$_POST['subject']."','".$_POST['message']."','5')";
+        mysqli_query($link,$sql);
+        mysqli_close($link);
+
         if($mail->Send())
         {
+
 
             $msg = "Hi, Your mail successfully sent to".$email." ";
             echo $msg;

@@ -131,8 +131,8 @@
                 <i class="fas fa-fw fa-chart-bar"></i>
                 <span>Relatorio</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="perfil.php">
+        <li class="nav-item active">
+            <a class="nav-link active" href="perfil.php">
                 <i class="fas fa-fw fa-user"></i>
                 <span>Perfil</span></a>
         </li>

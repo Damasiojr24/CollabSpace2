@@ -118,7 +118,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="colaboradores.php">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-user-friends"></i>
                 <span>Colaboradores</span></a>
         </li>
         <li class="nav-item">
@@ -127,7 +127,7 @@
                 <span>Registar e controlar o Estagio de projecto</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="relatorio.php">
+            <a class="nav-link active" href="relatorio.php">
                 <i class="fas fa-fw fa-chart-bar"></i>
                 <span>Relatorio</span></a>
         </li>

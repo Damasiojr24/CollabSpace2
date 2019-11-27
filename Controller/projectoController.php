@@ -143,6 +143,18 @@ if (isset($_POST['actualizar'])){
 
 
 
+//if save butoon is clicked 
+   if(isset($_POST['save'])) {
+    $name = $_POST['name'];
+    $email =$_POST['email'];
+     $nomedoprojecto =$_POST['nomedoprojecto'];
+      $contacto =$_POST['contacto'];
+
+    $query ="INSERT INTO participantes (nome,email,nomedoprojecto,contacto) VALUES ('$name','$email','$nomedoprojecto','$contacto') ";
+    mysqli_query($db, $query);
+    $_SESSION['msg'] = "Address Successfuly saved";
+    header('location:index.php');// redirect to index page after inserting 
+   }
 
 
 

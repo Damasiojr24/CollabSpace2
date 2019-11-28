@@ -43,7 +43,13 @@ $resultado = mysqli_query($link,$sql);
     }
     .bg-dark {
     background-color: #087F61!important;
-}
+    }
+
+    .yu{
+          width: 134px;
+    margin-left: 10px;
+
+    }
   </style>
 
 </head>
@@ -122,8 +128,8 @@ $resultado = mysqli_query($link,$sql);
                 <span>Home</span></a>
         </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="verprojectos.php">
+      <li class="nav-item active">
+        <a class="nav-link active" href="verprojectos.php">
           <i class="fas fa-fw fa-hanukiah"></i>
           <span>Ver Projectos</span></a>
       </li>
@@ -144,7 +150,7 @@ $resultado = mysqli_query($link,$sql);
         </li>
         <li class="nav-item">
             <a class="nav-link" href="registarecontrolarestagiodeprojecto.php">
-                <i class="fas fa-fw fa-github"></i>
+                    <i class="fas fa-chart-bar"></i>
                 <span>Registar e controlar o Estagio de projecto</span></a>
         </li>
         <li class="nav-item">
@@ -183,9 +189,9 @@ $resultado = mysqli_query($link,$sql);
                   <tr class="trc">
                     <th class="th1">Nome do Projecto</th>
                     <th>Objectivos do projecto</th>
-                    <th>Detalhes</th>
-                    <th>Actualizar</th>
-                     <th>Remover</th>
+                    <th class="yu">Detalhes</th>
+                    <th class="yu">Actualizar</th>
+                     <th class="yu">Remover</th>
 
                   </tr>
                 </thead>
@@ -203,9 +209,9 @@ $resultado = mysqli_query($link,$sql);
                   <tr>
                     <td><?php echo $dados['nome']; ?></td>
                     <td><?php echo $dados['detalhes']; ?></td>
-                      <td><button type="submit" class="btn badge-primary" onclick="buscarParaDetalhes(<?php echo $dados['id'];?>)">Detalhes</button></td>
-                      <td><button type="submit" class="btn badge-success"  onclick="buscarParaEditar(<?php echo $dados['id'];?>)">Actualizar</button></td>
-                      <td><button class="btn btn-danger"  onclick="buscarParaRemover(<?php echo $dados['id'];?>)">Remover</button></td>
+                      <td><button type="submit" class="btn badge-primary yu" onclick="buscarParaDetalhes(<?php echo $dados['id'];?>)">Detalhes</button></td>
+                      <td><button type="submit" class="btn badge-success yu"  onclick="buscarParaEditar(<?php echo $dados['id'];?>)">Actualizar</button></td>
+                      <td><button class="btn btn-danger yu"  onclick="buscarParaRemover(<?php echo $dados['id'];?>)">Remover</button></td>
 
 
                   </tr>
@@ -416,6 +422,9 @@ $resultado = mysqli_query($link,$sql);
   <!-- Bootstrap core JavaScript-->
   <script src="../../Public/admin/vendor/jquery/jquery.min.js"></script>
   <script src="../../Public/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Public/bootstrap/js/bootstrap.js"></script>
+    <script src="../../Public/bootstrap/js/bootstrap.min.js"></script>
+
 
   <!-- Core plugin JavaScript-->
   <script src="../../Public/admin/vendor/jquery-easing/jquery.easing.min.js"></script>

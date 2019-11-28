@@ -101,8 +101,8 @@ session_start();
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
 
-        <li class="nav-item">
-            <a class="nav-link" href="index.php">
+        <li class="nav-item active">
+            <a class="nav-link active" href="index.php">
                 <i class="fas fa-fw fa-home"></i>
                 <span>Home</span></a>
         </li>
@@ -129,7 +129,7 @@ session_start();
         </li>
         <li class="nav-item">
             <a class="nav-link" href="registarecontrolarestagiodeprojecto.php">
-                <i class="fas fa-fw fa-github"></i>
+                 <i class="fas fa-chart-bar"></i>
                 <span>Registar e controlar o Estagio de projecto</span></a>
         </li>
         <li class="nav-item">

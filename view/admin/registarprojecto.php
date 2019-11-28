@@ -106,8 +106,8 @@
                 <i class="fas fa-fw fa-hanukiah"></i>
                 <span>Ver Projectos</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="registarprojecto.php">
+        <li class="nav-item active">
+            <a class="nav-link active" href="registarprojecto.php">
                 <i class="fas fa-fw fa-save"></i>
                 <span>Registrar Projectos</span></a>
         </li>
@@ -123,7 +123,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="registarecontrolarestagiodeprojecto.php">
-                <i class="fas fa-fw fa-github"></i>
+                   <i class="fas fa-chart-bar"></i>
                 <span>Registar e controlar o Estagio de projecto</span></a>
         </li>
         <li class="nav-item">

@@ -1,3 +1,9 @@
+<?php
+include "../../Conexao/conexao.php";
+$sql = "SELECT * FROM projecto";
+$resultado = mysqli_query($link,$sql); 
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,11 +25,30 @@
 
   <!-- Custom styles for this template-->
   <link href="../../Public/admin/css/sb-admin.css" rel="stylesheet">
-  <style type="text/css">
-        .bg-dark {
+   <style type="text/css">
+    
+    .th1{
+      width: 124px!important;
+    }
+    .bar{
+
+    height: 21px;
+    font-size: 14px;
+    }
+
+    .trc{
+      background-color:#087F61!important;
+    color: #fff!important;
+    }
+    .bg-dark {
     background-color: #087F61!important;
 }
+.yu2{
+      width: 132px;
+    margin-left: 10px;
+
   </style>
+}
 
 </head>
 
@@ -121,9 +146,9 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Colaboradores</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="registarecontrolarestagiodeprojecto.php">
-                <i class="fas fa-fw fa-github"></i>
+        <li class="nav-item active">
+            <a class="nav-link active" href="registarecontrolarestagiodeprojecto.php">
+              <i class="fas fa-chart-bar"></i>
                 <span>Registar e controlar o Estagio de projecto</span></a>
         </li>
         <li class="nav-item">
@@ -143,17 +168,66 @@
 
       <div class="container-fluid">
 
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
+          <div class="container-fluid">
+
+ <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="#">Colaboradores</a>
           </li>
           <li class="breadcrumb-item active">Overview</li>
         </ol>
 
-        <h1>Bem Vindo a pagina do Admin</h1>
+        <div class="#">
+           <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+           Tabela de dados dos projectos</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr class="trc">
+                    <th class="th1">Nome do Projecto</th>
+                    <th>Objectivos do projecto</th>
+                    <th class="yu2">Estado</th>
+                    <th>Percentagem</th>
+                    
+
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                     <th>Nome do Projecto</th>
+                    <th>Descricao</th>
+                    <th>Estado</th>
+                 <th>Edit</th>
+                    
+                  </tr>
+                </tfoot>
+              <tbody>
+                 <?php while($dados = mysqli_fetch_array($resultado)){ ?>
+                  <tr>
+                    <td><?php echo $dados['nome']; ?></td>
+                    <td><?php echo $dados['detalhes']; ?></td>
+                      <td><button type="submit" data-toggle="modal" data-target="#myModal"  class="btn btn-success  yu2" onclick="buscarParaDetalhes(<?php echo $dados['id'];?>)">Estado</button></td>
+                      <td><div class="progress bar" >
+                      <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                    </div></td>
+                      
+
+                  </tr>
+           <?php } ?>
+                </tbody>
+              </table>
 
 
+
+            </div>
+          </div>
+        </div>
+      </div>
+          
+        </div>
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
         <div class="container my-auto">
@@ -175,27 +249,44 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
+  <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header head-title">
+       
+        <h4 class="modal-title titlex">Estado</h4>
+      </div>
+      <div class="modal-body">
+           <form action="registarprojectocontroller.php" method="POST">
+           <form>
+  <div class="form-group">
+    <label for="formControlRange">Defina o Estado dpo projecto</label>
+    <input type="range" class="form-control-range" id="formControlRange">
+  </div>
+</form>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
       </div>
     </div>
+
   </div>
+</div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="../../Public/admin/vendor/jquery/jquery.min.js"></script>
   <script src="../../Public/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Public/bootstrap/js/bootstrap.js"></script>
+    <script src="../../Public/bootstrap/js/bootstrap.min.js"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="../../Public/admin/vendor/jquery-easing/jquery.easing.min.js"></script>

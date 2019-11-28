@@ -34,10 +34,33 @@ $resultado = mysqli_query($link,$sql);
 
   <!-- Custom styles for this template-->
   <link href="../../Public/admin/css/sb-admin.css" rel="stylesheet">
-  <style type="text/css">
-        .bg-dark {
+<style type="text/css">
+    
+    .th1{
+      width: 124px!important;
+    }
+
+    .trc{
+      background-color:#087F61!important;
+    color: #fff!important;
+    }
+    .bg-dark {
     background-color: #087F61!important;
 }
+ .stunner{
+  margin-left: 897px;
+    padding: 16px;
+    font-size: 15px;
+    width: 146px;
+ }
+
+ .titlex{
+      margin-right: 191px;
+ }
+ .head-title{
+  background-color: #28a745;
+    color: yellow;
+ }
   </style>
 
 </head>
@@ -126,8 +149,8 @@ $resultado = mysqli_query($link,$sql);
                 <i class="fas fa-fw fa-save"></i>
                 <span>Registrar Projectos</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="mensagem.php">
+        <li class="nav-item active">
+            <a class="nav-link active" href="mensagem.php">
                 <i class="fas fa-fw fa-envelope-open"></i>
                 <span>Mensagens Enviadas</span></a>
         </li>
@@ -138,7 +161,7 @@ $resultado = mysqli_query($link,$sql);
         </li>
         <li class="nav-item">
             <a class="nav-link" href="registarecontrolarestagiodeprojecto.php">
-                <i class="fas fa-fw fa-github"></i>
+                     <i class="fas fa-chart-bar"></i>
                 <span>Registar e controlar o Estagio de projecto</span></a>
         </li>
         <li class="nav-item">
@@ -204,8 +227,8 @@ $resultado = mysqli_query($link,$sql);
                                       <td><?php echo $dados['mensagem']; ?></td>
                                       <td><?php echo $dados['projectonome']; ?></td>
                                       <td><?php echo $dados['objectivo']; ?></td>
-                                      <th>Admitir</th>
-                                      <th>Nao admitir</th>
+                                      <th><button type="submit" class="btn btn-success">Admitir</button></th>
+                                      <th><button type="submit" class="btn btn-danger">Nao Admitir</button></th>
 
 
                                   </tr>

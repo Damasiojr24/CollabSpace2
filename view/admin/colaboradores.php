@@ -151,14 +151,14 @@ $resultado = mysqli_query($link,$sql);
                 <i class="fas fa-fw fa-envelope-open"></i>
                 <span>Mensagens Enviadas</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="colaboradores.php">
-                <i class="faS fa-user-friends"></i>
+        <li class="nav-item active ">
+            <a class="nav-link active" href="colaboradores.php">
+                <i class="fas fa-user-friends"></i>
                 <span>Colaboradores</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="registarecontrolarestagiodeprojecto.php">
-                <i class="fas fa-fw fa-github"></i>
+                      <i class="fas fa-chart-bar"></i>
                 <span>Registar e controlar o Estagio de projecto</span></a>
         </li>
         <li class="nav-item">
@@ -249,25 +249,25 @@ $resultado = mysqli_query($link,$sql);
         <h4 class="modal-title titlex">Registrar</h4>
       </div>
       <div class="modal-body">
-           <form>
+           <form action="registarprojectocontroller.php" method="POST">
   <div class="form-group">
     <label for="exampleInputEmail1">Nome Completo</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome a Registrar">
+    <input type="text" name="nome"class="form-control"  aria-describedby="emailHelp" placeholder="Nome a Registrar">
    
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Projecto</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Projecto">
+    <input type="text"name="nomedoprojecto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Projecto">
   
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
    
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Contacto</label>
-    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Numero de Telefone">
+    <input type="number" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Numero de Telefone">
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">

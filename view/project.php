@@ -59,6 +59,7 @@ $resultado = mysqli_query($link,$sql);
     background-color: #3ca754!important;
 }
 
+
     </style>
 
 
@@ -194,7 +195,7 @@ $resultado = mysqli_query($link,$sql);
       </div>
       <div class="modal-body">
           <div class="form-group" >
-              <input type="number" name="idprojecto" class="form-control"  value="<?php echo $_GET['id']?>">
+              <input type="number" name="idprojecto" class="form-control displays"  value="<?php echo $_GET['id']?>">
           </div>
   <div class="form-group">
     <label for="email">Nome Completo:</label>
@@ -370,7 +371,8 @@ $resultado = mysqli_query($link,$sql);
                   'email':$('input[name=email]').val(),
                   'email2':$('input[name=email2]').val(),
                   'message':$('textarea[name=message]').val(),
-                  'btn_send':1
+                   'idprojecto':$('input[name=idprojecto]').val(),
+                     'btn_send':1
 
               },
               success:function(dataResult){

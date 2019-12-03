@@ -20,7 +20,7 @@ function salvar(){
 
     $projeto->setObjectivo($_POST['objectivo']);
     $objectivo=$projeto->getObjectivo();
-    $sql = "INSERT INTO projecto(nome,objectivo,descricao,detalhes,usuario_id) VALUES ('".$nome."','".$objectivo."','".$descricao."','".$detalhes."','1')";
+    $sql = "INSERT INTO projecto(nome,objectivo,descricao,detalhes,usuario_id,estado) VALUES ('".$nome."','".$objectivo."','".$descricao."','".$detalhes."','1','0')";
     mysqli_query($link,$sql);
     echo json_decode(array("statusCode"=>200));
     mysqli_close($link);
@@ -56,7 +56,7 @@ if(isset($_POST['buscarparaeditar'])){
 
 if(isset($_POST['buscarparardetalhes'])){
     $id=$_POST['id'];
-    $sql = "SELECT * FROM projecto where id=1";
+    $sql = "SELECT * FROM projecto where id=$id";
     $resultado= mysqli_query($link,$sql);
     while ($row=mysqli_fetch_assoc($resultado)){
         $id=$row['id'];
@@ -144,7 +144,7 @@ if (isset($_POST['actualizar'])){
 
 
 //if save butoon is clicked 
-   if(isset($_POST['save'])) {
+/*   if(isset($_POST['save'])) {
     $name = $_POST['name'];
     $email =$_POST['email'];
      $nomedoprojecto =$_POST['nomedoprojecto'];
@@ -154,7 +154,7 @@ if (isset($_POST['actualizar'])){
     mysqli_query($db, $query);
     $_SESSION['msg'] = "Address Successfuly saved";
     header('location:index.php');// redirect to index page after inserting 
-   }
+   }*/
 
 
 

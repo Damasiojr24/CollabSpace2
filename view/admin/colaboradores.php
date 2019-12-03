@@ -1,8 +1,14 @@
 <?php
 include "../../Conexao/conexao.php";
-$sql = "SELECT * FROM participantes";
-$resultado = mysqli_query($link,$sql); 
- ?>
+$sql = "SELECT * FROM colaborador";
+$resultado = mysqli_query($link,$sql);
+
+
+
+$sqls = "SELECT * FROM pedidosercolaborador";
+$emails = mysqli_query($link,$sqls);
+?>
+
 
 
 <!DOCTYPE html>
@@ -75,11 +81,9 @@ $resultado = mysqli_query($link,$sql);
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+
         <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
+
         </div>
       </div>
     </form>
@@ -110,17 +114,22 @@ $resultado = mysqli_query($link,$sql);
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
-      </li>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-fw"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <?php
+                if($_SESSION["name"]) {
+                    ?>
+                    <a class="dropdown-item" href="#"><?php echo $_SESSION["name"]; ?></a>
+                    <?php
+                }else echo "<h1>Please login first .</h1>";
+                ?>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../../Controller/logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </div>
+        </li>
     </ul>
 
   </nav>
@@ -250,29 +259,34 @@ $resultado = mysqli_query($link,$sql);
       </div>
       <div class="modal-body">
            <form action="registarprojectocontroller.php" method="POST">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Nome Completo</label>
-    <input type="text" name="nome"class="form-control"  aria-describedby="emailHelp" placeholder="Nome a Registrar">
-   
+  <div class="form-group" id="novoemail">
+    <label for="exampleInputEmail1">Selecione o Email de usuario</label>
+      <select name="emailid" id="" class="form-control" onchange="prencherModal()">
+          <option value="1"> vamos ver</option>
+          <?php foreach ($emails as $email){?>
+          <option value="<?php echo $email['id']; ?>" class="form-control"><?php echo $email['email']; ?></option>
+          <?php } ?>
+      </select>
+
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Projecto</label>
+    <label for="exampleInputEmail1">Nome Completo</label>
     <input type="text"name="nomedoprojecto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Projecto">
   
   </div>
+
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-   
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Contacto</label>
+    <label for="exampleInputPassword1">Telefone</label>
     <input type="number" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Numero de Telefone">
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Morada</label>
+    <input type="number" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Numero de Telefone">
   </div>
+ <div class="form-group">
+ <label for="exampleInputPassword1">Proviniencia</label>
+  <input type="text" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Escola, curso">
+ </div>
   <button type="submit" class="btn btn-success">Submit</button>
 </form>
       </div>
@@ -318,7 +332,7 @@ $resultado = mysqli_query($link,$sql);
   <script src="../../Public/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="../../Public/admin/vendor/chart.js/Chart.min.js"></script>
+
   <script src="../../Public/admin/vendor/datatables/jquery.dataTables.js"></script>
   <script src="../../Public/admin/vendor/datatables/dataTables.bootstrap4.js"></script>
 
@@ -327,7 +341,47 @@ $resultado = mysqli_query($link,$sql);
 
   <!-- Demo scripts for this page-->
   <script src="../../Public/admin/js/demo/datatables-demo.js"></script>
-  <script src="../../Public/admin/js/demo/chart-area-demo.js"></script>
+
+
+
+  <script>
+      function prencherModal() {
+          console.log($('select[name=emailid]').val())
+
+          if($('select[name=emailid]').val()==1){
+              $('#novoemail').empty();
+              $("#novoemail").append("<p>Email<p>" +"</br>"+
+                  "<input type='text' class='form-control'  width='100px'>");
+          }else {
+
+          $.ajax({
+              type:'post',
+              url: '../../Controller/colaboradorController.php',
+              dataType:'JSON',
+              data:{
+                  '_token':$('input[name=_token]').val(),
+                  'id':$('select[name=emailid]').val(),
+                  'buscarparardados':1
+              },
+              success:function(data){
+                /*  document.getElementById("nomeremover").innerHTML=data[0].nome+"?";
+                  document.getElementById("idremover").value=data[0].id;
+                  $('#modalremover').modal('show');
+                  console.log(data);*/
+
+                  console.log(data[0].nome);
+
+
+              },
+              error:function () {
+                  alert("Erro ao tentar buscar projecto, tente novamente");
+
+
+              }
+          });
+      }
+      }
+  </script>
 
 
   

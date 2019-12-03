@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ae00fe-3487-4d01-ad9f-bb8fbb4fc49b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Controller/colaboradorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/estagioController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/projectoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/projectoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/colaboradores.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/colaboradores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/mensagem.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/mensagem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/perfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/registarecontrolarestagiodeprojecto.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/registarecontrolarestagiodeprojecto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/registarprojecto.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/registarprojecto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/relatorio.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/relatorio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/verprojectos.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/verprojectos.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,46 +28,87 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/projectoController.php">
+        <entry file="file://$PROJECT_DIR$/Controller/loginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+            <state relative-caret-position="238">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/login.php">
+        <entry file="file://$PROJECT_DIR$/view/admin/colaboradores.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+            <state relative-caret-position="404">
+              <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/verprojectos.php">
+        <entry file="file://$PROJECT_DIR$/view/admin/mensagem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="5" />
+            <state relative-caret-position="372">
+              <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/perfil.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/registarecontrolarestagiodeprojecto.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/registarprojecto.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/registarprojectocontroller.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/relatorio.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/admin/mensagem.php">
+        <entry file="file://$PROJECT_DIR$/view/admin/verprojectos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="259" column="8" lean-forward="true" selection-start-line="259" selection-start-column="8" selection-end-line="259" selection-end-column="8" />
+            <state relative-caret-position="272">
+              <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/processaremail.php">
+        <entry file="file://$PROJECT_DIR$/view/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="150" selection-start-line="34" selection-start-column="150" selection-end-line="34" selection-end-column="150" />
+            <state relative-caret-position="136">
+              <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -79,26 +130,28 @@
         <option value="$PROJECT_DIR$/view/admin/vendor/datatables/jquery.dataTables.js" />
         <option value="$PROJECT_DIR$/modal/conexao.php" />
         <option value="$PROJECT_DIR$/view/index.php" />
-        <option value="$PROJECT_DIR$/view/admin/colaboradores.php" />
-        <option value="$PROJECT_DIR$/view/admin/perfil.php" />
-        <option value="$PROJECT_DIR$/view/admin/registarecontrolarestagiodeprojecto.php" />
-        <option value="$PROJECT_DIR$/view/admin/registarprojecto.php" />
-        <option value="$PROJECT_DIR$/view/admin/relatorio.php" />
         <option value="$PROJECT_DIR$/view/admin/login.php" />
         <option value="$PROJECT_DIR$/Controller/loginController.php" />
         <option value="$PROJECT_DIR$/view/admin/index.php" />
         <option value="$PROJECT_DIR$/Controller/logout.php" />
-        <option value="$PROJECT_DIR$/view/admin/verprojectos.php" />
-        <option value="$PROJECT_DIR$/Controller/projectoController.php" />
         <option value="$PROJECT_DIR$/view/project.php" />
         <option value="$PROJECT_DIR$/Controller/processaremail.php" />
+        <option value="$PROJECT_DIR$/Controller/estagioController.php" />
+        <option value="$PROJECT_DIR$/Controller/projectoController.php" />
+        <option value="$PROJECT_DIR$/Controller/colaboradorController.php" />
+        <option value="$PROJECT_DIR$/view/admin/colaboradores.php" />
         <option value="$PROJECT_DIR$/view/admin/mensagem.php" />
+        <option value="$PROJECT_DIR$/view/admin/perfil.php" />
+        <option value="$PROJECT_DIR$/view/admin/registarecontrolarestagiodeprojecto.php" />
+        <option value="$PROJECT_DIR$/view/admin/registarprojecto.php" />
+        <option value="$PROJECT_DIR$/view/admin/relatorio.php" />
+        <option value="$PROJECT_DIR$/view/admin/verprojectos.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-77" />
-    <option name="y" value="67" />
+    <option name="x" value="325" />
+    <option name="y" value="225" />
     <option name="width" value="1044" />
     <option name="height" value="643" />
   </component>
@@ -140,7 +193,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/PROGRAMACAO-WEB/TrabalhoDeFinalDeCurso/Web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -194,16 +247,21 @@
       <workItem from="1573038233504" duration="1277000" />
       <workItem from="1574248597241" duration="4928000" />
       <workItem from="1574330448686" duration="5194000" />
+      <workItem from="1574893222665" duration="1422000" />
+      <workItem from="1574930381086" duration="12538000" />
+      <workItem from="1575026314154" duration="1191000" />
+      <workItem from="1575211490958" duration="265000" />
+      <workItem from="1575274813551" duration="6245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81574000" />
+    <option name="totallyTimeSpent" value="103235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30786687" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -216,7 +274,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.5859247" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.19312602" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -249,7 +307,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/admin/registrar.php" />
     <entry file="file://$PROJECT_DIR$/Modelo/projecto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -257,9 +314,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/PROGRAMACAO-WEB/multiservicos/app/Http/Controllers/FornecedorController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://F:/PROGRAMACAO-WEB/multiservicos/app/Http/Controllers/FornecedorController.php" />
     <entry file="file://$PROJECT_DIR$/../../FVA/Conexao/conexao.php" />
     <entry file="file://$PROJECT_DIR$/js/bootstrap.bundle.min.js" />
     <entry file="file://$PROJECT_DIR$/view/admin/js/sb-admin.min.js" />
@@ -269,28 +324,10 @@
     <entry file="file://$PROJECT_DIR$/view/admin/js/demo/datatables-demo.js" />
     <entry file="file://$PROJECT_DIR$/view/admin/css/sb-admin.css" />
     <entry file="file://$PROJECT_DIR$/../../defesa/Visao/adicionar-estudante.php" />
-    <entry file="file://F:/PROGRAMACAO-WEB/davidDefesa/resources/views/editarremover-estudante.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5449">
-          <caret line="651" column="43" lean-forward="true" selection-start-line="651" selection-start-column="43" selection-end-line="651" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://F:/PROGRAMACAO-WEB/davidDefesa/resources/views/editarremover-estudante.blade.php" />
     <entry file="file://$PROJECT_DIR$/../../defesa/Visao/tabela-estudantes.php" />
-    <entry file="file://F:/PROGRAMACAO-WEB/multiservicos/resources/views/materialEscolar/fornecedor.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="647" column="4" selection-start-line="647" selection-start-column="4" selection-end-line="651" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/PROGRAMACAO-WEB/davidDefesa/resources/views/inscricao.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="639" column="11" selection-start-line="639" selection-start-column="11" selection-end-line="658" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://F:/PROGRAMACAO-WEB/multiservicos/resources/views/materialEscolar/fornecedor.blade.php" />
+    <entry file="file://F:/PROGRAMACAO-WEB/davidDefesa/resources/views/inscricao.blade.php" />
     <entry file="file://$PROJECT_DIR$/../../Inscricoes/Controlo/ControleUser.php" />
     <entry file="file://$PROJECT_DIR$/../../Inscricoes/Controlo/controloCadeira.php" />
     <entry file="file://$PROJECT_DIR$/../../Inscricoes/Controlo/controloCurso.php" />
@@ -300,13 +337,7 @@
     <entry file="file://$PROJECT_DIR$/../../Inscricoes/Visao/formularioCadastroEstudante.php" />
     <entry file="file://$PROJECT_DIR$/../../Inscricoes/Visao/formularioAnexarPauta.php" />
     <entry file="file://$PROJECT_DIR$/../../Inscricoes/Visao/listarPautasDocente.php" />
-    <entry file="file://F:/PROGRAMACAO-WEB/davidDefesa/resources/views/editarremover-professor.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="564" column="66" lean-forward="true" selection-start-line="564" selection-start-column="66" selection-end-line="564" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://F:/PROGRAMACAO-WEB/davidDefesa/resources/views/editarremover-professor.blade.php" />
     <entry file="file://$PROJECT_DIR$/../../Inscricoes/Controlo/Json.php" />
     <entry file="file://$PROJECT_DIR$/modal/conexao.php" />
     <entry file="file://$PROJECT_DIR$/view/index.php">
@@ -324,41 +355,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/admin/mensagens.php" />
-    <entry file="file://$PROJECT_DIR$/view/admin/colaboradores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/relatorio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/perfil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/registarecontrolarestagiodeprojecto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/PROGRAMACAO-WEB/template/templates/templates/bootflat-admin-master/bootflat-admin-master/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://F:/PROGRAMACAO-WEB/template/templates/templates/bootflat-admin-master/bootflat-admin-master/login.html" />
     <entry file="file://$PROJECT_DIR$/Public/login/site.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -366,20 +363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-171">
           <caret line="16" column="53577" selection-start-line="16" selection-start-column="53577" selection-end-line="16" selection-end-column="53577" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/loginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="93" column="11" lean-forward="true" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -393,17 +376,10 @@
     <entry file="file://$PROJECT_DIR$/Conexao/conexao.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/registarprojecto.php">
+    <entry file="file://$PROJECT_DIR$/view/project.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/projectoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        <state relative-caret-position="-3024">
+          <caret line="196" column="41" selection-start-line="196" selection-start-column="41" selection-end-line="196" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -414,31 +390,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3024">
-          <caret line="196" column="41" selection-start-line="196" selection-start-column="41" selection-end-line="196" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/admin/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="408">
           <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/verprojectos.php">
+    <entry file="file://$PROJECT_DIR$/Controller/estagioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" />
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/colaboradorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/projectoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="147" column="27" lean-forward="true" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/loginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/colaboradores.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/admin/mensagem.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="259" column="8" lean-forward="true" selection-start-line="259" selection-start-column="8" selection-end-line="259" selection-end-column="8" />
+        <state relative-caret-position="372">
+          <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/perfil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/registarecontrolarestagiodeprojecto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/registarprojecto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/registarprojectocontroller.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/relatorio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/verprojectos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
         </state>
       </provider>
     </entry>

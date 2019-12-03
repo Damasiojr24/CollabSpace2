@@ -48,7 +48,7 @@ $resultado = mysqli_query($link,$sql);
     margin-left: 10px;
 
   </style>
-}
+
 
 </head>
 
@@ -65,11 +65,9 @@ $resultado = mysqli_query($link,$sql);
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+
         <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
+
         </div>
       </div>
     </form>
@@ -100,17 +98,22 @@ $resultado = mysqli_query($link,$sql);
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
-      </li>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-fw"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <?php
+                if($_SESSION["name"]) {
+                    ?>
+                    <a class="dropdown-item" href="#"><?php echo $_SESSION["name"]; ?></a>
+                    <?php
+                }else echo "<h1>Please login first .</h1>";
+                ?>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../../Controller/logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </div>
+        </li>
     </ul>
 
   </nav>
@@ -209,9 +212,9 @@ $resultado = mysqli_query($link,$sql);
                   <tr>
                     <td><?php echo $dados['nome']; ?></td>
                     <td><?php echo $dados['detalhes']; ?></td>
-                      <td><button type="submit" data-toggle="modal" data-target="#myModal"  class="btn btn-success  yu2" onclick="buscarParaDetalhes(<?php echo $dados['id'];?>)">Estado</button></td>
+                      <td><button type="submit" data-toggle="modal" data-target="#myModal"  class="btn btn-success  yu2" onclick="buscarId(<?php echo $dados['id'];?>)">Estado</button></td>
                       <td><div class="progress bar" >
-                      <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                      <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: <?php echo $dados['estado'].'%'?>" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><?php echo $dados['estado'].'%'?></div>
                     </div></td>
                       
 
@@ -260,18 +263,18 @@ $resultado = mysqli_query($link,$sql);
         <h4 class="modal-title titlex">Estado</h4>
       </div>
       <div class="modal-body">
-           <form action="registarprojectocontroller.php" method="POST">
-           <form>
+     <form action="../../Controller/estagioController.php" method="POST">
   <div class="form-group">
     <label for="formControlRange">Defina o Estado dpo projecto</label>
-    <input type="range" class="form-control-range" id="formControlRange">
+    <input type="range" class="form-control-range" name="estadodoprojecto" id="formControlRange">
+      <input type="number" class="form-check-input" name="idproject" id="idprojecto" hidden>
   </div>
-</form>
+
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+
   </div>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="submit" class="btn btn-success" name="salvar">Salvar</button>
 </form>
       </div>
       <div class="modal-footer">
@@ -292,7 +295,7 @@ $resultado = mysqli_query($link,$sql);
   <script src="../../Public/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="../../Public/admin/vendor/chart.js/Chart.min.js"></script>
+
   <script src="../../Public/admin/vendor/datatables/jquery.dataTables.js"></script>
   <script src="../../Public/admin/vendor/datatables/dataTables.bootstrap4.js"></script>
 
@@ -301,8 +304,19 @@ $resultado = mysqli_query($link,$sql);
 
   <!-- Demo scripts for this page-->
   <script src="../../Public/admin/js/demo/datatables-demo.js"></script>
-  <script src="../../Public/admin/js/demo/chart-area-demo.js"></script>
+
 
 </body>
+
+<script>
+
+
+
+    function buscarId(data) {
+        console.log(data)
+        document.getElementById('idprojecto').value=data;
+
+    }
+</script>
 
 </html>

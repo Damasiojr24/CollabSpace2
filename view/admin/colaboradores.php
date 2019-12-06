@@ -1,11 +1,11 @@
 <?php
 include "../../Conexao/conexao.php";
-$sql = "SELECT * FROM colaborador";
+$sql = "SELECT * FROM participantes";
 $resultado = mysqli_query($link,$sql);
 
 
 
-$sqls = "SELECT * FROM pedidosercolaborador";
+$sqls = "SELECT * FROM participantes";
 $emails = mysqli_query($link,$sqls);
 ?>
 
@@ -216,12 +216,12 @@ $emails = mysqli_query($link,$sqls);
                 </tfoot>
               <tbody>
                  <?php while($dados = mysqli_fetch_array($resultado)){ ?>
-                  <tr>
+                  <tr>s
                     <td><?php echo $dados['nome']; ?></td>
                     <td><?php echo $dados['nomedoprojecto']; ?></td>
                     <td><?php echo $dados['email']; ?></td>
                      <td><?php echo $dados['contacto']; ?></td>
-                      <td><button type="submit" class="btn badge-success"  onclick="buscarParaEditar(<?php echo $dados['id'];?>)" >Actualizar</button>
+                      <td><button type="submit" class="btn badge-success" data-toggle="modal" data-target="#myModal2">Actualizar</button>
 
 
 
@@ -259,33 +259,64 @@ $emails = mysqli_query($link,$sqls);
       </div>
       <div class="modal-body">
            <form action="registarprojectocontroller.php" method="POST">
-  <div class="form-group" id="novoemail">
-    <label for="exampleInputEmail1">Selecione o Email de usuario</label>
-      <select name="emailid" id="" class="form-control" onchange="prencherModal()">
-          <option value="1"> vamos ver</option>
-          <?php foreach ($emails as $email){?>
-          <option value="<?php echo $email['id']; ?>" class="form-control"><?php echo $email['email']; ?></option>
-          <?php } ?>
-      </select>
-
-  </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Nome Completo</label>
-    <input type="text"name="nomedoprojecto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Projecto">
+    <input type="text"name="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Projecto">
   
   </div>
 
   <div class="form-group">
-    <label for="exampleInputPassword1">Telefone</label>
-    <input type="number" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Numero de Telefone">
+    <label for="exampleInputPassword1">N.Projecto</label>
+    <input type="text" name="nomedoprojecto" class="form-control" id="exampleInputPassword1" placeholder="Nome do Projecto">
   </div>
    <div class="form-group">
-    <label for="exampleInputPassword1">Morada</label>
-    <input type="number" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Numero de Telefone">
+    <label for="exampleInputPassword1">Email</label>
+    <input type="email" name="Email" class="form-control" id="exampleInputPassword1" placeholder="email">
   </div>
  <div class="form-group">
- <label for="exampleInputPassword1">Proviniencia</label>
-  <input type="text" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Escola, curso">
+ <label>Contacto</label>
+  <input type="text" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Contacto">
+ </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--- Actualizar-->
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header head-title">
+       
+        <h4 class="modal-title titlex">Actualizar</h4>
+      </div>
+      <div class="modal-body">
+           <form action="#" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nome Completo</label>
+    <input type="text"name="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Projecto">
+  
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">N.Projecto</label>
+    <input type="text" name="nomedoprojecto" class="form-control" id="exampleInputPassword1" placeholder="Nome do Projecto">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Email</label>
+    <input type="email" name="Email" class="form-control" id="exampleInputPassword1" placeholder="email">
+  </div>
+ <div class="form-group">
+ <label>Contacto</label>
+  <input type="text" name="contacto" class="form-control" id="exampleInputPassword1" placeholder="Contacto">
  </div>
   <button type="submit" class="btn btn-success">Submit</button>
 </form>

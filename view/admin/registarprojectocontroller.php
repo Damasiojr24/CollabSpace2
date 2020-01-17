@@ -1,7 +1,7 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";    
+    $servername = "us-cdbr-iron-east-05.cleardb.net";
+    $username = "b466cf3c5d19aa";
+    $password = "5b0d294c";    
     $dbname = "collab";
 
     // Create connection
